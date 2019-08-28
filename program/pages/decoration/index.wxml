@@ -1,0 +1,40 @@
+<include src="/core/main.wxml"/>
+<import src="/core/template.wxml"/>
+
+<view class="page">
+    <view class="img-box">
+        <image src="{{ temUrl }}" mode="widthFix"></image>
+    </view>
+    <view class="page-blank"></view>
+    <div class="button-container">
+        <div class="button-box">
+            <scroll-view scroll-y class="handle-box">
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="1">埃及妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="2">巴西土著妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="3">灰姑娘妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="4">恶魔妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="5">武媚娘妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="6">星光薰衣草</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="7">花千骨</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="8">僵尸妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="9">爱国妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="10">小胡子妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="11">美羊羊妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="12">火影鸣人妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="13">刀马旦妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="14">泡泡妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="15">桃花妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="16">女皇妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="17">权志龙</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="18">撩妹妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="19">印第安妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="20">印度妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="21">萌兔妆</button>
+                <button type="primary" size="mini" bindtap="events.decoration" data-decoration="22">大圣妆</button>
+            </scroll-view>
+        </div>
+        <div class="button-box">
+            <button type="primary" class="save" disabled="{{!isUploaded}}" bindtap="events.save">保存照片到相册</button>
+        </div>
+    </div>
+</view>

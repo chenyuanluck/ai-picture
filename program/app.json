@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/upload/index",
+    "pages/pictures/index",
+    "pages/decoration/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

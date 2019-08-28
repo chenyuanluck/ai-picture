@@ -1,0 +1,91 @@
+<!-- ====================消息弹窗==================== -->
+<view id="xm-message-box"
+      class="xm-message-box"
+      wx:if="{{base_page.isShowSimpleMessage}}">
+    <view class="content">
+        <view class="shade"/>
+        <text>{{base_page.simpleMessage}}</text>
+    </view>
+</view>
+
+        <!-- ====================录音弹窗==================== -->
+<view id="xm-record-shade" class="xm-record-shade {{XM_RECORD.recordBoxClass}}">
+<view class="content" catchtap="XM_RECORD_empty">
+    <view class="head">
+        <view class="button" bindtap="XM_RECORD_closeRecordBox">取消</view>
+        <view class="title" wx:if="{{XM_RECORD.recordStatus==1 && XM_RECORD.ableAutoSend==true}}">
+            <text class="auto">{{XM_RECORD.maxTime-XM_RECORD.time}}s</text>
+            <text class="auto">后将自动发送并录下一条</text>
+        </view>
+        <view class="title" wx:if="{{XM_RECORD.recordStatus==0||XM_RECORD.recordStatus==1 && XM_RECORD.ableAutoSend==false}}">
+            <text>{{XM_RECORD.time}}s</text>
+            <text>-</text>
+            <text>{{XM_RECORD.maxTime}}s</text>
+        </view>
+        <view class="title" wx:if="{{XM_RECORD.recordStatus==2||XM_RECORD.recordStatus==3}}">
+            <text>{{XM_RECORD.playTime}}s</text>
+            <text>-</text>
+            <text>{{XM_RECORD.time}}s</text>
+        </view>
+        <view class="button finish"
+              bindtap="XM_RECORD_finish"
+              wx:if="{{XM_RECORD.recordStatus!=0 && XM_RECORD.recordStatus!=1 && XM_RECORD.recordStatus!=3}}">发布
+        </view>
+        <view class="button"
+              wx:if="{{XM_RECORD.recordStatus==0 || XM_RECORD.recordStatus==1 || XM_RECORD.recordStatus==3}}"/>
+    </view>
+
+    <view class="control-box" wx:if="{{XM_RECORD.recordStatus==0}}">
+        <view class="control-button-box"/>
+        <view class="control-main icon-record-start" bindtap="XM_RECORD_startRecord"/>
+        <view class="control-button-box"/>
+    </view>
+    <view class="alert-info" wx:if="{{XM_RECORD.recordStatus==0}}">单击开始录音</view>
+
+    <view class="control-box" wx:if="{{XM_RECORD.recordStatus==1}}">
+        <view class="control-button-box"/>
+        <view class="control-main icon-record-stop" bindtap="XM_RECORD_stopRecord"/>
+        <view class="control-button-box"/>
+    </view>
+    <view class="alert-info" wx:if="{{XM_RECORD.recordStatus==1}}">单击结束录音</view>
+
+    <view class="control-box" wx:if="{{XM_RECORD.recordStatus==2}}">
+        <view class="control-button-box"/>
+        <view class="control-main icon-record-play" bindtap="XM_RECORD_play"/>
+        <view class="control-button-box">
+            <view class="control-button icon-record-repeat" bindtap="XM_RECORD_resetRecord"/>
+        </view>
+    </view>
+    <view class="alert-info" wx:if="{{XM_RECORD.recordStatus==2}}">单击播放录音</view>
+
+    <view class="control-box" wx:if="{{XM_RECORD.recordStatus==3}}">
+        <view class="control-button-box"/>
+        <view class="control-main  icon-record-stop" bindtap="XM_RECORD_stop"/>
+        <view class="control-button-box"/>
+    </view>
+    <view class="alert-info" wx:if="{{XM_RECORD.recordStatus==3}}">单击结束播放</view>
+</view>
+</view>
+
+        <!-- ====================分享二维码画布==================== -->
+<view id="xm-share-qt-code-canvas-box" class="xm-share-qt-code-canvas-box">
+<canvas canvas-id="xm-share-qt-code-canvas"/>
+</view>
+
+        <!-- ====================百分比进度弹窗==================== -->
+<view id="xm-percent-progress" class="xm-percent-progress" wx:if="{{base_page.isShowPercentProgress}}">
+<view class="xm-progress-container">
+    <view class="wrapper right">
+        <view class="circle right" style="transform: rotate({{base_page.percentProgressRightRotate}}deg);" />
+    </view>
+    <view class="wrapper left">
+        <view class="circle left" style="transform: rotate({{base_page.percentProgressLeftRotate}}deg);" />
+    </view>
+    <view class="percent-progress-value">
+        <text>{{base_page.percentProgress}}</text>
+        <text class="small">%</text>
+    </view>
+</view>
+</view>
+
+<global-navigate />

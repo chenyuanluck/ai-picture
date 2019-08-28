@@ -1,0 +1,20 @@
+image {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.page {
+    width: 750rpx;
+}
+
+.page .image-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10rpx;
+}
+
+
+.page .image-container .item {
+    margin-top: 10rpx;
+}

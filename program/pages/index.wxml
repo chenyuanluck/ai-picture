@@ -1,0 +1,17 @@
+<include src="/core/main.wxml"/>
+<import src="/core/template.wxml"/>
+
+<view class="page">
+    <view class="handle-container">
+        <view class="item-box">
+            <navigator url="/pages/upload/index">
+                <button type="primary" bindtap="events.decoration" data-decoration="1">开始制作</button>
+            </navigator>
+        </view>
+        <view class="item-box">
+            <navigator url="/pages/pictures/index">
+                <button type="primary" bindtap="events.decoration" data-decoration="1">我的相册</button>
+            </navigator>
+        </view>
+    </view>
+</view>

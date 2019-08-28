@@ -1,0 +1,66 @@
+{
+	"description": "项目配置文件。",
+	"miniprogramRoot": "program/",
+	"cloudfunctionRoot": "functions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wxf15fad5b7d3f3b20",
+	"projectname": "%E7%BE%8E%E9%A2%9C%E7%9B%B8%E5%86%8C",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 5,
+					"name": "decoration",
+					"pathName": "pages/decoration/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pictures",
+					"pathName": "pages/pictures/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

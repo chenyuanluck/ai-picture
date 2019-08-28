@@ -1,0 +1,43 @@
+<template name="pagination">
+    <view id="xm-not-data-box"
+          class="xm-not-data-box"
+          wx:if="{{pagination.hasNotData}}"
+          style="height: {{pagination.notDataBoxHeight}}rpx;">
+        <block wx:for="{{pagination.notDataTexts}}" wx:key="index">
+            <view>{{item}}</view>
+        </block>
+    </view>
+    <view id="xm-pull-down-load-more"
+          class="xm-pull-down-load-more"
+          wx:if="{{pagination.list.length && pagination.list.length>0 && pagination.isEnd==false}}">
+        <text>上拉加载更多</text>
+    </view>
+    <view id="xm-pull-down-load-end"
+          class="xm-pull-down-load-end"
+          wx:if="{{pagination.list.length && pagination.list.length>=20 && pagination.isEnd==true}}">
+        <text>数据加载完成</text>
+    </view>
+</template>
+
+<template name="voice">
+<view class="xm-voice-box" style="margin-top: 0;">
+    <view class="voice"
+          data-id="{{id}}"
+          data-path="{{path}}"
+          data-time="{{time}}"
+          catchtap="XM_VOICE_play"
+          style="width: {{87+((maxWidth || 260)-87)*time/60}}rpx;">
+        <view class="not-read" wx:if="{{showRead==true&&voice.voices[id].isRead==false}}" />
+        <image wx:if="{{!voice.voices[id].isPlaying}}" src="http://www.xiameikeji.com/resource/course/image/icon/voice/play.png"/>
+        <image wx:if="{{voice.voices[id].isPlaying}}" src="http://www.xiameikeji.com/resource/course/image/icon/voice/play.gif"/>
+    </view>
+    <text class="time">{{time}}"</text>
+</view>
+</template>
+
+<template name="audio">
+<view class="xm-voice-box" style="margin-top: 0;">
+    <audio poster="{{poster}}" src="{{src}}" id="myAudio" controls />
+    <text class="time">{{time}}"</text>
+</view>
+</template>

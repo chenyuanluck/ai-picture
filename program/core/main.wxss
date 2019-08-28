@@ -1,0 +1,372 @@
+/*========================消息样式========================*/
+.xm-message-box {
+    position: fixed;
+    top: 45%;
+    z-index: 99999;
+    width: 100%;
+    text-align: center;
+}
+
+.xm-message-box .content {
+    position: relative;
+    opacity: 0.9;
+    z-index:999999;
+    max-width: 350rpx;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20rpx;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+
+.xm-message-box .content .shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.xm-message-box .content text {
+    color: #FFF;
+    line-height: 40rpx;
+    font-size: 28rpx;
+}
+
+/*========================分页样式========================*/
+.xm-not-data-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.xm-not-data-box view {
+    font-size: 28rpx;
+    color: #aaaaaa;
+    display: block;
+    text-align: center;
+    line-height: 40rpx;
+    min-height: 40rpx;
+}
+
+.xm-pull-down-load-more {
+    font-size: 28rpx;
+    color: #777777;
+    height: 240rpx;
+    line-height: 240rpx;
+    text-align: center;
+}
+
+.xm-pull-down-load-end {
+    font-size: 28rpx;
+    color: #d2d2d2;
+    height: 240rpx;
+    line-height: 240rpx;
+    text-align: center;
+}
+/*========================录音样式========================*/
+.xm-record-shade.show {
+    display: block
+}
+
+.xm-record-shade.show .content {
+    animation: record-show .4s ease forwards
+}
+
+.xm-record-shade.hide {
+    display: block;
+    animation: record-shade-hide .4s ease .4s forwards
+}
+
+.xm-record-shade.hide .content {
+    animation: record-hide .4s ease forwards
+}
+
+.xm-record-shade {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9
+}
+
+.xm-record-shade .content {
+    position: absolute;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: -420rpx;
+    height: 420rpx;
+    border-radius: 30rpx;
+    background: #FFFFFF
+}
+
+.xm-record-shade .content .head {
+    width: 100%;
+    height: 126rpx;
+    display: flex
+}
+
+.xm-record-shade .content .head .button {
+    width: 153rpx;
+    text-align: center;
+    line-height: 126rpx;
+    font-size: 32rpx;
+    color: #aaaaaa;
+    font-weight: bold
+}
+
+.xm-record-shade .content .head .button.finish {
+    color: #00e6c8
+}
+
+.xm-record-shade .content .head .title {
+    flex: 1;
+    font-weight: bold;
+    text-align: center;
+    line-height: 126rpx
+}
+
+.xm-record-shade .content .head .title text {
+    font-size: 32rpx;
+    color: #aaaaaa
+}
+
+.xm-record-shade .content .head .title text:first-child {
+    color: #00e6c8
+}
+
+.xm-record-shade .content .head .title text.auto {
+    font-size: 26rpx;
+    color: #555555;
+    font-weight: normal;
+}
+
+.xm-record-shade .content .head .title text.auto:first-child {
+    color: #00e6c8
+}
+
+.xm-record-shade .content .control-box {
+    display: flex;
+    padding: 0 27rpx;
+    margin: 13rpx 0 0 0;
+    align-items: center
+}
+
+.xm-record-shade .content .control-box .control-main {
+    width: 168rpx;
+    height: 168rpx;
+    background-size: 100% 100%
+}
+
+.xm-record-shade .content .control-box .control-button-box {
+    flex: 1;
+    text-align: center
+}
+
+.xm-record-shade .content .control-box .control-button-box .control-button {
+    width: 108rpx;
+    height: 108rpx;
+    background-size: 100% 100%;
+    display: inline-block
+}
+
+.xm-record-shade .content .alert-info {
+    margin-top: 40rpx;
+    line-height: 69rpx;
+    font-size: 26rpx;
+    color: #555555;
+    text-align: center
+}
+
+@keyframes record-show {
+    from {
+        bottom: -420rpx
+    }
+    to {
+        bottom: 30rpx
+    }
+}
+
+@keyframes record-hide {
+    from {
+        bottom: 30rpx
+    }
+    to {
+        bottom: -420rpx
+    }
+}
+
+@keyframes record-shade-hide {
+    from {
+        background: rgba(0, 0, 0, 0.5)
+    }
+    99% {
+        background: rgba(0, 0, 0, 0);
+        top: 0
+    }
+    to {
+        top: 100%
+    }
+}
+
+.icon-record-start {
+    background-image: url('http://www.xiameikeji.com/resource/course/image/icon/voice/record_start.png');
+    background-repeat: no-repeat;
+}
+
+.icon-record-stop {
+    background-image: url('http://www.xiameikeji.com/resource/course/image/icon/voice/record_stop.png');
+    background-repeat: no-repeat;
+}
+
+.icon-record-end {
+    background-image: url('http://www.xiameikeji.com/resource/course/image/icon/voice/record_end.png');
+    background-repeat: no-repeat;
+}
+
+.icon-record-play {
+    background-image: url('http://www.xiameikeji.com/resource/course/image/icon/voice/record_play.png');
+    background-repeat: no-repeat;
+}
+
+.icon-record-repeat {
+    background-image: url('http://www.xiameikeji.com/resource/course/image/icon/voice/record_repeat.png');
+    background-repeat: no-repeat;
+}
+
+/*========================语音播放========================*/
+.xm-voice-box {
+    display: flex
+}
+
+.xm-voice-box .voice {
+    width: 87rpx;
+    height: 66rpx;
+    background-color: #f5f7f9;
+    border-radius: 10rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.xm-voice-box .voice .not-read {
+    width: 12rpx;
+    height: 12rpx;
+    background-color: #F00;
+    border-radius: 6rpx;
+    right: -4rpx;
+    top: -4rpx;
+    position: absolute;
+}
+
+.xm-voice-box .voice image {
+    width: 27rpx;
+    height: 34rpx;
+    margin-left: 30rpx
+}
+
+.xm-voice-box .time {
+    font-size: 26rpx;
+    color: #999999;
+    line-height: 66rpx;
+    margin-left: 24rpx;
+    flex: 1
+}
+
+/*========================分享二维码画布========================*/
+.xm-share-qt-code-canvas-box {
+    position: fixed;
+    left: -9000000px;
+}
+
+.xm-share-qt-code-canvas-box canvas {
+    width: 375px;
+    height: 667px;
+}
+
+/*========================分享二维码画布========================*/
+.xm-percent-progress {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.xm-percent-progress .xm-progress-container {
+    width: 240rpx;
+    height: 240rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 120rpx;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper {
+    width: 120rpx;
+    height: 240rpx;
+    position: absolute;
+    top:0;
+    overflow: hidden;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper.right {
+    right:0;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper.left {
+    left:0;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper .circle {
+    width: 240rpx;
+    height: 240rpx;
+    border: 11rpx solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top:0;
+    transform: rotate(45deg);
+    transition-delay: 0;
+    transition-property: all;
+    transition-timing-function: linear;
+    transition-duration: 0.3s;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper .circle.right {
+    border-top: 11rpx solid #00ffde;
+    border-right: 11rpx solid #00ffde;
+    right:0;
+}
+
+.xm-percent-progress .xm-progress-container .wrapper .circle.left {
+    border-bottom: 11rpx solid #00ffde;
+    border-left: 11rpx solid #00ffde;
+    left:0;
+    transition-delay: 0.3s;
+}
+
+.xm-percent-progress .xm-progress-container .percent-progress-value {
+    background-color: #797979;
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 110rpx;
+    text-align: center;
+    line-height: 218rpx;
+    color: #00ffde;
+    font-size: 76rpx;
+}
+
+.xm-percent-progress .xm-progress-container .percent-progress-value .small {
+    font-size: 30rpx;
+}

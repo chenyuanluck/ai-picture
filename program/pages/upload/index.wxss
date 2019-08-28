@@ -1,0 +1,43 @@
+image {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.page {
+    width: 750rpx;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page .img-box {
+    flex: 1;
+}
+
+.page .img-box img {
+    width: 100%;
+}
+
+.page-blank {
+    height: 200rpx;
+}
+
+.page .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    height: 200rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eee;
+}
+
+.page .button-container .button-box {
+    flex: 1;
+    padding: 0 5%;
+}

@@ -1,0 +1,8 @@
+.xm-image {
+
+}
+
+.xm-image.loading {
+    position: absolute;
+    left: -9999rpx;
+}

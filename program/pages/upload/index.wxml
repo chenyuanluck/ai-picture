@@ -1,0 +1,17 @@
+<include src="/core/main.wxml"/>
+<import src="/core/template.wxml"/>
+
+<view class="page">
+    <view class="img-box">
+        <image src="{{ temUrl }}" mode="widthFix"></image>
+    </view>
+    <view class="page-blank"></view>
+    <div class="button-container">
+        <div class="button-box">
+            <button type="primary" bindtap="events.upload">{{ isUploaded?'重新上传':'上传头像' }}</button>
+        </div>
+        <div class="button-box">
+            <button type="primary" bindtap="events.next" disabled="{{!isUploaded}}">下一步</button>
+        </div>
+    </div>
+</view>

@@ -1,0 +1,12 @@
+<block>
+    <image wx:if="{{imageIsLoad==false}}"
+           class="xm-image"
+           src="/resources/image/load_image.png"
+           mode="{{mode}}" />
+    <image src="{{src}}"
+           class="xm-image {{imageIsLoad==false?'loading':''}}"
+           bindload="events.load"
+           bindtap="events.preview"
+           data-urls="{{src}}"
+           mode="{{mode}}" />
+</block>

@@ -1,0 +1,18 @@
+<include src="/core/main.wxml"/>
+<import src="/core/template.wxml"/>
+
+<view class="page">
+    <view class="image-container">
+        <view class="item"
+              wx:for="{{list}}"
+              wx:for-item="item"
+              wx:for-index="item.id"
+              wx:key="{{item.id}}"
+              bindtap="events.preview"
+              data-urls="{{item.imgUrl}}">
+            <image class="image"
+                   src="{{item.imgUrl}}"
+                   mode="widthFix"></image>
+        </view>
+    </view>
+</view>
