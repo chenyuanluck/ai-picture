@@ -1,7 +1,7 @@
 # 小程序云开发入门实战-美颜相册
 我们用传统模式开发一个互联网应用，需要掌握多个技术栈并且需要部署各种服务器相关软件，相对比较麻烦。本项目将向大家介绍如何用小程序&云开发开发一个完整的项目。以及云开发相关api的简单使用。
 
-## 前置资料
+## <a name="前置资料">前置资料</a>
 * [小程序简介](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AE%80%E4%BB%8B)
 
 * [小程序注册](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E5%B8%90%E5%8F%B7)
@@ -12,10 +12,10 @@
 
 * [腾讯AI人脸识别地址](https://ai.qq.com/product/face.shtml#detect)
 
-## 项目简介
+## <a name="项目简介">项目简介</a>
 使用小程序&云开发实现一个美颜相册小程序。数据存储、第三方api调用用云开发技术栈实现。
 
-## 运行本项目
+## <a name="运行本项目">运行本项目</a>
 1. 下载项目文件，解压到本地目录
 
 2. 将本地目录引入到小程序开发者工具
@@ -32,9 +32,11 @@
 6. 将云函数api的超时时间改为不小于10秒(因为第三方AI接口的调用比较耗时)
 ![avatar](https://wx.wegouer.com/static/github/ai-picture/import/step4.png)
 
-7. 项目引入完成，开始预览项目吧~
+7. 在开发者工具->云开发->数据库 中新建名为'pictures'的集合
 
-## 目录结构
+8. 项目引入完成，开始预览项目吧~
+
+## <a name="目录结构">目录结构</a>
 ```$xslt
 |README.md                     项目说明文件
 |project.config.json           小程序配置
@@ -69,7 +71,7 @@
 |  |  |config.js               云函数全局配置文件
 ```
 
-## 项目架构
+## <a name="项目架构">项目架构</a>
 ![avatar](https://wx.wegouer.com/static/github/ai-picture/framework.jpg)
 
 
