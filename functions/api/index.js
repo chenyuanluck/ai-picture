@@ -5,11 +5,11 @@ cloud['init']();
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-    const {ENV} = cloud.getWXContext()
+    const {ENV} = cloud.getWXContext();
     // 更新默认配置，将默认访问环境设为当前云函数所在环境
     cloud.updateConfig({
         env: ENV
-    })
+    });
     // 请求入参
     const params = event['params'] || {};
     if (services[params['apiCode']]) {

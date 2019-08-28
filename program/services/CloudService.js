@@ -78,7 +78,7 @@ Service.pictureSave = async function (params) {
     // 图片云存储ID
     request.put('imageId', params['imageId']);
     return await this.getCloudService(`picture/save`, request);
-}
+};
 
 // 分页获取我的相片列表
 Service.picturePage = async function (params) {
@@ -89,7 +89,7 @@ Service.picturePage = async function (params) {
     // 每页记录数
     request.put('pageSize', params['pageSize'], 20);
     return await this.getCloudService(`picture/page`, request);
-}
+};
 
 // 人脸检测与分析
 Service.faceDetect = async function (params) {
@@ -98,7 +98,7 @@ Service.faceDetect = async function (params) {
     // 图片地址
     request.put('imgUrl', params['imgUrl']);
     return await this.getCloudService(`face/detect`, request);
-}
+};
 
 // 人脸变妆
 Service.faceDecoration = async function (params) {
@@ -120,7 +120,7 @@ Service.faceDecoration = async function (params) {
     // 变妆编码
     request.put('decoration', params['decoration']);
     return await this.getCloudService(`face/decoration`, request);
-}
+};
 
 // 当前编辑的图片信息
 Service.CURRENT_EDIT_IMG_INFO = {

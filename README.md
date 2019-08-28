@@ -38,7 +38,6 @@
 ```$xslt
 |README.md                     项目说明文件
 |project.config.json           小程序配置
-|project.config.json           小程序配置
 |program/                      小程序代码目录
 |  |core/                      项目工具包目录
 |  |pages/                     小程序界面目录
@@ -67,6 +66,7 @@
 |  |  |package.json            node包配置
 |  |  |services.js             服务映射
 |  |  |utils.js                简单工具文件
+|  |  |config.js               云函数全局配置文件
 ```
 
 ## 项目架构

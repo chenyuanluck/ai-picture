@@ -8,6 +8,7 @@
  */
 const cloud = require('wx-server-sdk');
 const http = require('http');
+const Config = require('./config');
 // const querystring = require('querystring');
 // cloud['init']();
 const request = require('request');
@@ -289,7 +290,7 @@ class BaseService {
         const timestamp = Math.floor((new Date()).valueOf() / 1000);
         // 人脸识别请求参数
         let _params = Object.assign({
-            app_id: 2121104975,
+            app_id: Config['TC_AI_APP_ID'],
             nonce_str: this.md5(timestamp),
             time_stamp: timestamp
         }, params);
@@ -311,7 +312,7 @@ class BaseService {
                 arr.push(`${key}=${encodeURIComponent(params[key])}`);
             }
         }
-        arr.push(`app_key=BaYl1JQKBJB1QdXr`);
+        arr.push(`app_key=${Config['TC_AI_APP_KEY']}`);
         let str = arr.join('&');
         params['sign'] = this.md5(str).toUpperCase();
         return params;
