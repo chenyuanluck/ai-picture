@@ -27,16 +27,18 @@ class MainService extends BaseService {
         params['imgUrl'] = params['imgUrl'].replace('https://', 'http://');
         // base64图片
         const imgBase64 = await this.getBase64ImgByUrl(params['imgUrl']);
-
+        // 调用'人脸变妆'服务
         let result = await this.postTcAi(`https://api.ai.qq.com/fcgi-bin/ptu/ptu_facedecoration`, {
             image: imgBase64,
             decoration: params['decoration']
         });
         if (result.code === 0) {
-            const up = await this.cloudUpload(`demo/${(new Date()).valueOf()}.png`, new Buffer(result.data.image, 'base64'));
-            //
-            up.imgUrl = await this.getFilePathById(up.fileID);
-            return this.getResult(up);
+            const filePath = `pictures/${(new Date()).valueOf()}${Math.floor(Math.random() * 100)}.png`;
+            // 文件上传结果
+            const file = await this.cloudUpload(filePath, new Buffer(result.data.image, 'base64'));
+            // 文件外网地址
+            file.imgUrl = await this.getFilePathById(file.fileID);
+            return this.getResult(file);
         } else {
             return this.getResult({}, result.code, result.msg);
         }

@@ -63,7 +63,7 @@ Service.callFunction = async function (name, data) {
 // 上传图片
 Service.uploadImage = async function (filePath) {
     const extension = filePath.substring(filePath.lastIndexOf('.'), filePath.length);
-    const cloudPath = `${Date.now()}-${Math.floor(Math.random() * 10000)}${extension}`;
+    const cloudPath = `source/${(new Date()).valueOf()}${Math.floor(Math.random() * 100)}${extension}`;
     const result = await this.uploadFile(cloudPath, filePath);
     if (!result) {
         return false;
