@@ -60,10 +60,19 @@ Service.callFunction = async function (name, data) {
     return await this.getCloud().callFunction({name: name, data: data || {}});
 };
 
-// 上传图片
-Service.uploadImage = async function (filePath) {
+/**
+ * 上传图片
+ * @param filePath 本地缓存文件路径
+ * @param cloudDir 上传目录
+ * @returns {Promise<boolean|Promise<any>>}
+ */
+Service.uploadImage = async function (filePath, cloudDir) {
+    cloudDir = cloudDir || 'source';
+    // 从链接提取文件扩展名
     const extension = filePath.substring(filePath.lastIndexOf('.'), filePath.length);
-    const cloudPath = `source/${(new Date()).valueOf()}${Math.floor(Math.random() * 100)}${extension}`;
+    // 生成图片路径
+    const cloudPath = `${cloudDir}/${(new Date()).valueOf()}${Math.floor(Math.random() * 100)}${extension}`;
+    // 文件上传结果
     const result = await this.uploadFile(cloudPath, filePath);
     if (!result) {
         return false;
@@ -87,7 +96,7 @@ Service.picturePage = async function (params) {
     // 当前页码
     request.put('page', params['page'], 1);
     // 每页记录数
-    request.put('pageSize', params['pageSize'], 20);
+    request.put('pageSize', params['pageSize'], 1000);
     return await this.getCloudService(`picture/page`, request);
 };
 

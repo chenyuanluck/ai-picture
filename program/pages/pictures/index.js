@@ -6,7 +6,7 @@
  * 版本: 1.0.0
  * 创建时间: 2019/8/25 15:01
  */
-import {WeChat, BasePage, Service, regeneratorRuntime} from '../../core/main';
+import {WeChat, BasePage, Service, regeneratorRuntime, StringUtils} from '../../core/main';
 
 class Index extends BasePage {
     constructor() {
@@ -44,13 +44,13 @@ class Index extends BasePage {
             WeChat.wx.hideLoading();
             if (result.code === 0) {
                 let {list} = result.data || {};
-                this.setData({list: list});
+                this.setData({list: this.formatPictureList(list)});
                 if (list.length === 0) {
                     WeChat.wx.showModal({
                         content: '你还没有制作美颜相册呢，快去制作吧~',
                         showCancel: false,
                         success() {
-                            WeChat.wx.redirectTo({url: '/pages/upload/index'});
+                            WeChat.wx.switchTab({url: '/pages/upload/index'});
                         }
                     });
                 }
@@ -59,6 +59,44 @@ class Index extends BasePage {
             }
 
         })();
+    }
+
+    // 格式化图片列表
+    formatPictureList(list = []) {
+        // 结果
+        const result = [];
+        // 数据存储
+        let map = {};
+        // 日期存储
+        let arr = [];
+        for (let i = 0; i < list.length; i++) {
+            const item = Object.assign({}, list[i]);
+            // 上传日期
+            const date = StringUtils().formatTimestamp(list[i]['createTime']).substr(0, 13);
+            // 日期
+            item['date'] = date;
+            if (arr.indexOf(date) < 0) {
+                arr.push(date);
+            }
+            if (!!map[date]) {
+                map[date].push(item);
+            } else {
+                map[date] = [item];
+            }
+        }
+        arr.sort(function (x, y) {
+            return x - y;
+        });
+        for (let i = 0; i < arr.length; i++) {
+            let date = arr[i];
+            result.push({
+                date: date,
+                dateArr: date.match(new RegExp('\\d+', 'g')),
+                list: map[date]
+            });
+        }
+        console.log(result);
+        return result;
     }
 }
 

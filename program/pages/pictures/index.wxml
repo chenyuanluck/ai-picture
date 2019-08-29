@@ -3,16 +3,34 @@
 
 <view class="page">
     <view class="image-container">
-        <view class="item"
+        <view class="group"
               wx:for="{{list}}"
-              wx:for-item="item"
-              wx:for-index="item.id"
-              wx:key="{{item.id}}"
-              bindtap="events.preview"
-              data-urls="{{item.imgUrl}}">
-            <image class="image"
-                   src="{{item.imgUrl}}"
-                   mode="widthFix"></image>
+              wx:for-item="group"
+              wx:for-index="index"
+              wx:key="{{index}}">
+            <view class="date">
+                <text class="big">{{ group.dateArr[0] }}</text>
+                <text>年</text>
+                <text class="big">{{ group.dateArr[1] }}</text>
+                <text>月</text>
+                <text class="big">{{ group.dateArr[2] }}</text>
+                <text>日</text>
+                <text class="big" style="margin-left: 20rpx;">{{ group.dateArr[3] }}</text>
+                <text>时</text>
+            </view>
+            <view class="group-content">
+                <view class="item"
+                      wx:for="{{ group.list }}"
+                      wx:for-item="item"
+                      wx:for-index="index"
+                      wx:key="{{index}}"
+                      bindtap="events.preview"
+                      data-urls="{{item.imgUrl}}">
+                    <image class="image"
+                           src="{{item.imgUrl}}"
+                           mode="aspectFill"></image>
+                </view>
+            </view>
         </view>
     </view>
 </view>

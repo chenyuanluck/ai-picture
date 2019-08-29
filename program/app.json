@@ -11,5 +11,25 @@
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#f2564e",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/upload/index",
+        "iconPath": "resources/images/icon/user.png",
+        "selectedIconPath": "resources/images/icon/user_hl.png",
+        "text": "制作照片"
+      },
+      {
+        "pagePath": "pages/pictures/index",
+        "iconPath": "resources/images/icon/course.png",
+        "selectedIconPath": "resources/images/icon/course_hl.png",
+        "text": "我的相册"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

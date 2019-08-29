@@ -55,7 +55,15 @@ class Index extends BasePage {
                         fileID: this.data.fileID,
                         temUrl: this.data.temUrl
                     });
-                    WeChat.wx.navigateTo({url: `/pages/decoration/index`});
+                    WeChat.wx.navigateTo({
+                        url: `/pages/decoration/index`, success: () => {
+                            this.setData({
+                                temUrl: null,
+                                fileID: null,
+                                isUploaded: false
+                            });
+                        }
+                    });
                 } else if (result.code === 16404) {
                     return WeChat.wx.showToast({title: `人脸检测失败`, icon: 'none'});
                 } else {

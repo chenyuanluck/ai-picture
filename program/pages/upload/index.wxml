@@ -3,7 +3,8 @@
 
 <view class="page">
     <view class="img-box">
-        <image src="{{ temUrl }}" mode="widthFix"></image>
+        <image wx:if="{{ isUploaded }}" src="{{ temUrl }}" mode="widthFix"></image>
+        <image wx:if="{{ !isUploaded }}" src="/resources/images/face.jpg" style="opacity: 0.1;" mode="widthFix"></image>
     </view>
     <view class="page-blank"></view>
     <div class="button-container">

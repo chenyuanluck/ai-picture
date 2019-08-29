@@ -60,9 +60,9 @@ class Index extends BasePage {
                         confirmText: '查看相册',
                         success({confirm}) {
                             if(confirm) {
-                                WeChat.wx.redirectTo({url: '/pages/pictures/index'});
+                                WeChat.wx.switchTab({url: '/pages/pictures/index'});
                             } else {
-                                WeChat.wx.redirectTo({url: '/pages/index'});
+                                WeChat.wx.switchTab({url: '/pages/upload/index'});
                             }
                         }
                     });
