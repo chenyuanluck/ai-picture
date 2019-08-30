@@ -74,8 +74,29 @@
 ## <a name="项目架构">项目架构</a>
 ![avatar](https://wx.wegouer.com/static/github/ai-picture/framework.jpg)
 
+## <a name="腾讯AI开放平台注册">腾讯AI开放平台注册</a>
+1. 打开[腾讯AI开放平台](https://ai.qq.com/product/face.shtml#detect)，点击控制台
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step1.png)
 
+2. 扫描二维码授权登录
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step2.png)
 
+3. 完善信息完成注册
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step3.png)
+
+4. 进入[我的应用](https://ai.qq.com/console/home)界面，点击新建应用
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step4.png)
+
+5. 填写应用信息，完成应用创建
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step5.png)
+
+6. 进入[人脸变妆](https://ai.qq.com/console/capability/detail/26)能力界面，点击接入能力按钮，选择上一步创建的应用，接入对应能力。
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step6.png)
+
+7. 点击'应用管理'，进入对应的应用，获取AI能力接入需要用到的appId、appKey
+![avatar](https://wx.wegouer.com/static/github/ai-picture/ai/step7.png)
+
+8. 收功
 
 
 
