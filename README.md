@@ -72,6 +72,7 @@
 ```
 
 ## <a name="项目架构">项目架构</a>
+
 ![avatar](https://wx.wegouer.com/static/github/ai-picture/framework.jpg)
 
 ## <a name="腾讯AI开放平台注册">腾讯AI开放平台注册</a>
